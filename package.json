@@ -1,0 +1,48 @@
+{
+  "name": "@zukdoor/board-sdk",
+  "author": "Zukdoor Inc.",
+  "version": "0.1.0",
+  "description": "Zukdoor Board SDK",
+  "license": "MIT",
+  "main": "dist/board-sdk.cjs.js",
+  "module": "dist/board-sdk.esm.js",
+  "browser": "dist/board-sdk.js",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-google": "^0.11.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-jsdoc": "^3.9.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.15.2",
+    "rollup": "^0.67.3",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-uglify": "^6.0.0",
+    "sinon": "^7.1.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "format": "prettier --write \"**/*.+(js|json|md)\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "fabric": "^2.4.4"
+  }
+}

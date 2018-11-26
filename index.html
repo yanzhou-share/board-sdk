@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ZukBoard: A collaborative online whiteboard</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.4/fabric.min.js"></script>
+  <script src="dist/board-sdk.js"></script>
+  <canvas id="whiteboard" width="800" height="600"></canvas>
+  <button id="draw-button">Click it</button>
+  <script>
+    // import Board from '/dist/board-sdk.esm.js'
+    var board = new boardSdk('whiteboard')
+    var button = document.getElementById('draw-button')
+    button.addEventListener('click', () => {
+      board.layerDraw.isDrawingMode = !board.layerDraw.isDrawingMode
+    })
+    console.info(fabric)
+  </script>
+</body>
+
+</html>

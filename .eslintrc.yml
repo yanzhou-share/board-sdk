@@ -1,0 +1,16 @@
+env:
+  es6: true
+  browser: true
+  node: true
+  mocha: true
+extends:
+  - google
+  - prettier
+plugins:
+  - jsdoc
+globals:
+  fabric: true
+  board: true
+parser: babel-eslint
+parserOptions:
+  sourceType: module
