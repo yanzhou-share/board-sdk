@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "Zukdoor Board SDK",
   "license": "MIT",
+  "private": false,
   "main": "dist/board-sdk.cjs.js",
   "module": "dist/board-sdk.esm.js",
   "browser": "dist/board-sdk.js",
@@ -35,7 +36,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "format": "prettier --write \"**/*.+(js|json|md)\""
+    "format": "prettier --write \"**/*.+(js|json|md)\"",
+    "build:docs": "jsdoc src/**/*.js"
   },
   "husky": {
     "hooks": {
