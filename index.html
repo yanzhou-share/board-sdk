@@ -11,8 +11,7 @@
   <canvas id="whiteboard" width="800" height="600"></canvas>
   <button id="draw-button">Click it</button>
   <script>
-    // import Board from '/dist/board-sdk.esm.js'
-    var board = new boardSdk('whiteboard')
+    var board = new Board(document.getElementById('whiteboard'))
     var button = document.getElementById('draw-button')
     button.addEventListener('click', () => {
       board.layerDraw.isDrawingMode = !board.layerDraw.isDrawingMode

@@ -42,7 +42,5 @@
       "pre-commit": "lint-staged"
     }
   },
-  "dependencies": {
-    "fabric": "^2.4.4"
-  }
+  "dependencies": {}
 }

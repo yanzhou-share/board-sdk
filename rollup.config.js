@@ -1,50 +1,30 @@
-import json from 'rollup-plugin-json'
+// import json from 'rollup-plugin-json'
 // import babel from 'rollup-plugin-babel'
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
+// import resolve from 'rollup-plugin-node-resolve'
+// import commonjs from 'rollup-plugin-commonjs'
 import pkg from './package.json'
 
 export default [
-  // // browser-friendly UMD build
-  // {
-  //   input: 'src/index.js',
-  //   output: {
-  //     name: 'boardSdk',
-  //     file: pkg.browser,
-  //     format: 'umd',
-  //   },
-  //   plugins: [
-  //     resolve({
-  //       jsnext: true,
-  //       main: true,
-  //     }), // so Rollup can find `ms`
-  //     babel({
-  //       exclude: 'node_modules/**', // compile our source code only
-  //     }),
-  //     commonjs(), // so Rollup can convert `ms` to an ES module
-  //     json(),
-  //   ],
-  // },
-
-  // browser-friendly IIFE build
+  // browser-friendly UMD build
   {
     input: 'src/index.js',
     output: {
-      name: 'boardSdk',
+      name: 'Board',
       file: pkg.browser,
-      format: 'iife',
+      format: 'umd',
     },
-    plugins: [
-      resolve({
-        jsnext: true,
-        main: true,
-      }), // so Rollup can find `ms`
-      //   babel({
-      //     exclude: 'node_modules/**', // compile our source code only
-      //   }),
-      commonjs(), // so Rollup can convert `ms` to an ES module
-      json(),
-    ],
+    // plugins: [
+    //   resolve({
+    //     jsnext: true,
+    //     main: true,
+    //     preferBuiltins: false,
+    //   }), // so Rollup can find `ms`
+    //   babel({
+    //     exclude: 'node_modules/**', // compile our source code only
+    //   }),
+    //   commonjs(), // so Rollup can convert `ms` to an ES module
+    //   json(),
+    // ],
   },
 
   // CommonJS (for Node) and ES module (for bundlers) build.
@@ -55,7 +35,6 @@ export default [
   // `file` and `format` for each target)
   {
     input: 'src/index.js',
-    external: ['fabric'],
     output: [
       {
         file: pkg.main,
