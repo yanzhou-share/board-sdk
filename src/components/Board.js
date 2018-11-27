@@ -24,10 +24,7 @@ class Board {
       skipTargetFind: false,
       isDrawingMode: true,
     }
-    this.layerDraw =
-      typeof window !== undefined
-        ? new fabric.Canvas(node, props)
-        : fabric.createCanvasForNode(props.width, props.height)
+    this.layerDraw = new fabric.Canvas(node, props)
   }
 
   /**
