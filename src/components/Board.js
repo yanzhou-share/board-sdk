@@ -9,10 +9,11 @@ class Board {
    * @param {object} options 选项
    * @property {boolean} options.interactive 白板是否可交互
    * @property {boolean} options.fullSelection 框选白板元素的判断方法
+   * @param {array} plugins 需要使用的插件
    * @param {object} key 用于鉴权的口令
    */
-  constructor(node, options = {}, key = {}) {
-    this.layerDraw = new fabric.Canvas(node, {
+  constructor(node, options = {}, plugins = [], key = {}) {
+    const props = {
       width: node.offsetWidth,
       height: node.offsetHeight,
       preserveObjectStacking: true,
@@ -22,7 +23,11 @@ class Board {
       interactive: options.hasOwnProperty('interactive') ? options.interactive : false,
       skipTargetFind: false,
       isDrawingMode: true,
-    })
+    }
+    this.layerDraw =
+      typeof window !== undefined
+        ? new fabric.Canvas(node, props)
+        : fabric.createCanvasForNode(props.width, props.height)
   }
 
   /**

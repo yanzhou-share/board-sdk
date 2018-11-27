@@ -11,7 +11,9 @@
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
+    "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "canvas": "^2.1.0",
     "chai": "^4.2.0",
     "eslint": "^5.9.0",
     "eslint-config-google": "^0.11.0",
@@ -19,6 +21,7 @@
     "eslint-plugin-jsdoc": "^3.9.1",
     "eslint-plugin-prettier": "^3.0.0",
     "husky": "^1.2.0",
+    "jsdom": "^13.0.0",
     "lint-staged": "^8.1.0",
     "mocha": "^5.2.0",
     "prettier": "^1.15.2",
@@ -36,6 +39,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "test": "mocha test/**/*.js --require @babel/register",
     "format": "prettier --write \"**/*.+(js|json|md)\"",
     "build:docs": "jsdoc src/**/*.js"
   },
