@@ -24,6 +24,7 @@
     "jsdom": "^13.0.0",
     "lint-staged": "^8.1.0",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "prettier": "^1.15.2",
     "rollup": "^0.67.3",
     "rollup-plugin-babel": "^4.0.3",
@@ -40,7 +41,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "mocha test/**/*.js --require @babel/register",
+    "test": "NODE_ENV=test nyc mocha test/**/*.js --require @babel/register",
     "format": "prettier --write \"**/*.+(js|json|md)\"",
     "build:docs": "jsdoc src/**/*.js"
   },

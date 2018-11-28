@@ -1,0 +1,15 @@
+{
+  "reporter": [
+    "lcov",
+    "html",
+    "text-summary"
+  ],
+  "require": [
+    "@babel/register"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib"
+  ],
+  "sourceMap": false
+}

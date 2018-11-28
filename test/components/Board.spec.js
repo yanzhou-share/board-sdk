@@ -54,4 +54,8 @@ describe('Board', () => {
     board.load()
     board.layerDraw._objects[0].aCoords.tl.x.should.equal(170)
   })
+
+  it('can get objects', () => {
+    board.getObjects().length.should.equal(1)
+  })
 })
